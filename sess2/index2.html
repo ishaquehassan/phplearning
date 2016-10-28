@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+</head>
+<body>
+    <p class="testPara"></p>
+    <p class="testPara2"></p>
+
+    <script>
+
+        document.querySelector(".testPara").innerHTML = "Hello World Query Selector";
+        add(2,3,".testPara");
+        add(6,3,".testPara2");
+
+
+        var integer = 5;
+        var float = 2.3;
+        var bool = false;
+        var char = 'a';
+        var arr1 = [1,2,3,4,5];
+        var string = "";
+
+
+        function add(a,b,selector) {
+            $(selector).text((a+b)).css({
+                "background" : "#f00",
+                "color" : "#fff"
+            });
+        }
+
+    </script>
+</body>
+</html>

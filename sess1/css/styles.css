@@ -1,0 +1,141 @@
+body{
+    background: #cccccc;
+}
+
+.main-wrapper {
+    margin-top: 40px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.34) 0px 0px 10px 0px;
+    padding-top: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+header {
+    background: #eee;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+
+a.logo {
+    float: left;
+    width: 200px;
+    display: block;
+}
+
+a.logo img {
+    width: 100%;
+}
+
+.post-item{
+    margin-bottom: 10px;
+    background: #666666;
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.search-form{
+    padding: 5px;
+    background: #ccc;
+    border: 1px solid #666;
+    border-radius: 9px;
+    box-shadow: rgba(0, 0, 0, 0.47) 0px 6px 10px 0px;
+}
+
+footer h3:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #000;
+    width: 50%;
+    margin-top: 5px;
+}
+footer h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+footer ul li a:hover {
+    margin-left: 5px;
+    text-decoration: none;
+    color: #666;
+}
+footer ul li a:before {
+    content: ' - ';
+}
+footer ul li a {
+    display: block;
+    padding: 3px 0px;
+    font-size: 13px;
+    color: #000;
+    transition: all 0.25s linear;
+}
+footer ul li {
+    padding: 0;
+}
+footer ul {
+    padding: 0;
+    list-style-type: none;
+}
+footer {
+    background: #dcdcdc;
+}
+
+
+nav ul li a:hover {
+    background: #eee;
+    color: #000;
+    text-decoration: none;
+}
+nav ul li a {
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    transition: all 0.25s linear;
+}
+
+nav li{
+    position: relative;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}
+nav {
+    background: #000;
+    margin-bottom: 10px;
+}
+
+
+nav ul li:hover ul {
+    transform: scale(1);
+}
+nav ul li {
+    position: relative;
+    display: block;
+    float: left;
+}
+nav ul ul li, nav ul ul li a {
+    clear: both;
+    float: none;
+}
+nav ul ul {
+    position: absolute;
+    left: 0;
+    background: #666;
+    top: 37px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 10px 0px;
+    transition: all 0.25s linear;
+    transform: scale(0);
+    transform-origin: top left;
+    min-width: 150px;
+}
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}

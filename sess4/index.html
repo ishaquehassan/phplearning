@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session 3</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+
+        </header>
+        <div class="content-area">
+            <div class="tabs">
+                <ul class="tabs-bar">
+                    <li><a href="#" data-content="content1" class="active">Tab One</a></li>
+                    <li><a href="#" data-content="content2">Tab Two</a></li>
+                    <li><a href="#" data-content="content3">Tab Three</a></li>
+                    <li><a href="#" data-content="content4">Tab Four</a></li>
+                </ul>
+                <div class="tab-contents">
+                    <div class="tab-content" data-name="content1">
+
+                    </div>
+                    <div class="tab-content" data-name="content2">
+
+                    </div>
+                    <div class="tab-content" data-name="content3">
+
+                    </div>
+                    <div class="tab-content" data-name="content4">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    /*var activeName = $(".tabs-bar a.active").data("content");
+    $('[data-name="'+activeName+'"]').fadeIn();
+    setTimeout(function () {
+        $(".tabs").css("min-height",($('[data-name="'+activeName+'"]').height()+$(".tabs-bar").height())+"px");
+    },1000);*/
+
+    $(".tabs-bar a").click(function (event) {
+        event.preventDefault();
+        var activeName = $(this).data("content");
+        $(".tab-contents .tab-content").fadeOut();
+        $('[data-name="'+activeName+'"]').fadeIn();
+        $(".tabs-bar a.active").removeClass("active");
+        $(this).addClass("active");
+
+        var contentArea = $('[data-name="'+activeName+'"]');
+
+        $.ajax({
+            url:"http://localhost:81/aurangzaib/sess4/content.php?contentIndex="+activeName,
+            success:function (res) {
+                contentArea.html(res);
+                var contentHeight = contentArea.height()+100;
+                $(".tabs").css("min-height",contentHeight+"px");
+            },error:function (error) {
+                console.log(error);
+            }
+        });
+    });
+
+    $(".tabs-bar li:nth-child(1) a").click();
+</script>
+</body>
+</html>

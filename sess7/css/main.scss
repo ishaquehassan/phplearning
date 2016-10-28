@@ -1,0 +1,28 @@
+$myBoxColor : #000;
+$width: 50%;
+$height:100px;
+
+@mixin addBorderRadius(){
+  border-radius: 10px;
+  box-shadow: #000000 0px 0px 10px 0px;
+}
+
+.myScssBox1{
+  background: $myBoxColor;
+  width: $width;
+  height: $height;
+  @include addBorderRadius();
+  border: 3px solid #f00;
+
+  h1,p{
+    color: #ff0000;
+    span{
+      color: #0f0;
+    }
+  }
+}
+
+.helloWorldBox{
+  @extend .myScssBox1;
+  margin-top: 20px;
+}

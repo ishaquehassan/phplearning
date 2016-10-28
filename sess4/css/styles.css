@@ -1,0 +1,47 @@
+.container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #eaeaea;
+    box-shadow: #000000 0px 0px 5px 0px;
+    position: relative;
+}
+
+.tabs .tabs-bar li a {
+    display: block;
+    color: #fff;
+    padding: 10px 20px;
+    background: #000;
+    margin-right: 10px;
+}
+.tabs .tabs-bar li a.active{
+    background: #ffffff;
+    color: #000000;
+}
+
+.tabs .tabs-bar li {
+    display: block;
+    float: left;
+    padding: 0;
+}
+.tabs .tabs-bar {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+}
+
+.tab-contents .tab-content {
+    position: absolute;
+    background: #ffffff;
+    width: 100%;
+    padding: 10px;
+    display: none;
+    padding-top: 20px;
+}
+.tab-contents {
+    clear: both;
+    display: block;
+}
+
+.tabs{
+    position: relative;
+}

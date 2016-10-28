@@ -1,0 +1,16 @@
+.myScssBox1, .helloWorldBox {
+  background: #000;
+  width: 50%;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: #000000 0px 0px 10px 0px;
+  border: 3px solid #f00; }
+  .myScssBox1 h1, .helloWorldBox h1, .myScssBox1 p, .helloWorldBox p {
+    color: #ff0000; }
+    .myScssBox1 h1 span, .helloWorldBox h1 span, .myScssBox1 p span, .helloWorldBox p span {
+      color: #0f0; }
+
+.helloWorldBox {
+  margin-top: 20px; }
+
+/*# sourceMappingURL=main.css.map */

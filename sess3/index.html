@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <style>
+        #myBox {
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            transition: all 0.25s linear;
+            transform: translateY(50vh);
+        }
+
+        #myBox.animated0 {
+            transform: rotate(90deg);
+        }
+
+        #myBox.animated1 {
+            transform: rotate(180deg);
+        }
+
+        #myBox.animated2 {
+            transform: rotate(270deg);
+        }
+
+        #myBox.animated3 {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+<div class="" id="myBox">
+    <h3>Hello World</h3>
+</div>
+<script>
+    var count = 0;
+    $("#myBox").hover(function () {
+        $(this).addClass("animated" + count);
+        count++;
+        if(count == 4){
+            count = 0;
+            $(this).attr("class","");
+        }
+    });
+</script>
+</body>
+</html>

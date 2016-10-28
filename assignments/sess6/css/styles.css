@@ -1,0 +1,27 @@
+.messages .message p:nth-child(2) {
+    font-size: 14px;
+}
+.messages .message p:nth-child(1) * {
+    color: #fff;
+    margin-bottom: 13px;
+    display: block;
+}
+.messages .message p {
+    margin: 0;
+}
+.messages .message {
+    background: #333;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.messages * {
+    color: #989898;
+}
+.messages {
+    width: 500px;
+    background: #000;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" href="slick/slick-theme.css" />
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <style>
+        .single-item{
+            width: 500px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .single-item img{
+            width: 100%;
+            height: 100px;
+        }
+
+        body{
+            background: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="single-item">
+    <div>Hello World 1</div>
+    <div>Hello World 2</div>
+    <div>Hello World 3</div>
+    <div>Hello World 4</div>
+</div>
+
+<script>
+    $('.single-item').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+    });
+
+    console.log("Hello World");
+</script>
+</body>
+</html>
