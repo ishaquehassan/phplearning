@@ -11,7 +11,7 @@
 <?php
 include 'connection.php';
 if (isset($_GET['delId'])) {
-    $delCmd = mysqli_query($connection, "DELETE FROM contacts WHERE cnt_id = " . $_GET['delId']);
+    $delCmd = mysqli_query($connection, "DELETE FROM contacts_simple WHERE cnt_id = " . $_GET['delId']);
     if ($delCmd) {
         $_SESSION['msg'] = "Deleted!";
         header("Location: index.php");
@@ -23,11 +23,12 @@ if (isset($_GET['delId'])) {
 }
 
 //Static Array for lists $listsTypes = array("Friends","Family","Office","General");
-$listsTypes = array();
+$listsTypes = array("Friends","Family","Office","General");
+/*$listsTypes = array();
 $listDataQuery = mysqli_query($connection,"SELECT * FROM contact_lists");
 while ($listRow = mysqli_fetch_array($listDataQuery)){
     $listsTypes[$listRow['list_id']] = $listRow['list_name'];
-}
+}*/
 ?>
 <?php if (!isset($_GET['editId'])) { ?>
     <form action="insert.php" method="post">
@@ -43,7 +44,7 @@ while ($listRow = mysqli_fetch_array($listDataQuery)){
         <input type="submit" value="Save"/>
     </form>
 <?php } else {
-    $contacts_edit_query = mysqli_query($connection, "SELECT * FROM contacts WHERE cnt_id = " . $_GET['editId']) or die(mysqli_error($connection));
+    $contacts_edit_query = mysqli_query($connection, "SELECT * FROM contacts_simple WHERE cnt_id = " . $_GET['editId']) or die(mysqli_error($connection));
     $editData = mysqli_fetch_array($contacts_edit_query);
     $contact_list_ids = array();
     if(strlen($editData['cnt_lists']) > 0){
@@ -57,6 +58,11 @@ while ($listRow = mysqli_fetch_array($listDataQuery)){
                placeholder="Enter Contact Phone Number"/>
         <br>
         <?php foreach ($listsTypes as $index => $listsType){ ?>
+            <?php
+            //echo $index." : ".$listsTypes[$contact_list_ids[$index]];
+            if(in_array($index,$contact_list_ids)){
+                echo "Item Found In array";
+            } ?>
             <label>
                 <input type="checkbox" name="list_id[]" value="<?=$index?>" <?=(in_array($index,$contact_list_ids) ? "checked" : "")?> /> <?=$listsType?>
             </label>
@@ -74,7 +80,7 @@ while ($listRow = mysqli_fetch_array($listDataQuery)){
 
 
 <?php
-$contacts_query = mysqli_query($connection, "SELECT * FROM contacts") or die(mysqli_error($connection));
+$contacts_query = mysqli_query($connection, "SELECT * FROM contacts_simple") or die(mysqli_error($connection));
 if (mysqli_num_rows($contacts_query) <= 0) { ?>
     <p>No Contacts Found!</p>
 <?php }
